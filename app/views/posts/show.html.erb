@@ -1,0 +1,16 @@
+<h1><%=@post.title%></h1>
+<p><%=@post.description%></p>
+<p>Usuario: <%=@post.user.email if @post.user%></p>
+<%= link_to "Editar", edit_post_path(@post)%>
+<h3>Comentarios</h3>
+<ol>
+<% @comments.each do |comment|%>
+  <li><%= comment.description %>
+    <%= link_to "Eliminar", post_comment_path(comment), method: :delete, data: {confirm: "Seguro?"}%>
+  </li>
+  <li><%= comment.user.email if comment.user %></li>
+<% end %>
+</ol>
+<h3>Crear Nuevo Comentario</h3>
+<%= render template: "comments/new" %>
+<%= link_to "Home", root_path%>
