@@ -1,6 +1,6 @@
 <!--Este archivo se titula _post_form con el fin de renderizar cosas.-->
 <%= form_for @post do |p| %>
-  <%= p.text_field :title %>
-  <%= p.text_field :description %>
-  <%= p.submit locals[:b_text] %>
+  <%= p.text_field :title %> <br><br>
+  <%= p.text_field :description %><br><br>
+  <a class="btn btn-primary"><%= p.submit locals[:b_text] %></a>
 <% end %>

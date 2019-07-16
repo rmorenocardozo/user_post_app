@@ -7,8 +7,8 @@
 <% @comments.each do |comment|%>
   <li><%= comment.description %>
     <%= link_to "Eliminar", post_comment_path(comment), method: :delete, data: {confirm: "Seguro?"}%>
+    <%= comment.user.email if comment.user %>
   </li>
-  <li><%= comment.user.email if comment.user %></li>
 <% end %>
 </ol>
 <h3>Crear Nuevo Comentario</h3>
